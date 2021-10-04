@@ -1,0 +1,19 @@
+#Include FindText.ahk
+
+F3::
+testo:=FindText(0,0,1400,900,0.1,0.1,"wrote",1,1)
+
+MsgBox,% testo
+return
+
+F4::
+
+FText:=FindText_OcrOK(FindText(0, 0, 600, 600, 0.01, 0, TxtLetters))
+Txt:=FText.ocr
+MsgBox, % Txt
+
+
+return
+F8::ExitApp
+return
+

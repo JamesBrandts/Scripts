@@ -1,0 +1,39 @@
+
+#Include <FindText>
+
+F2::    ; To identify the number near the mouse
+
+; For identification, we need to create a text library,
+; Of course, the following text library is not strong enough,
+; Perhaps in other computers, other screen resolutions,
+; Other browser magnification, different fonts, need to regenerate.
+; You can add the newly generated to the following existing text library,
+; To enhance the generality of this text library.
+
+Text:="|<0>*147$6.SnVVVVVnSU"
+Text.="|<1>*147$5.9kV248Hw"
+Text.="|<2>*148$6.yX11248EzU"
+Text.="|<3>*149$6.yX13C11XyU"
+Text.="|<4>*149$6.66+GmWz22U"
+Text.="|<5>*149$6.TEES311XyU"
+Text.="|<6>*148$6.CEUyXVVnSU"
+Text.="|<7>*149$6.z1224A8MEU"
+Text.="|<8>*148$6.SnVnSVVnSU"
+Text.="|<9>*148$6.SnVVlT12QU"
+
+CoordMode, Mouse
+MouseGetPos, x, y
+t1:=A_TickCount
+;------------------------------
+ok:=FindText(x-150, y-20, x+150, y+20, 0.2, 0.1, Text)
+arr:=FindText.OCR(ok), OCR:=arr.text
+;------------------------------
+t1:=A_TickCount-t1
+MsgBox, 4096, OCR, OCR Result: [%OCR%] in %t1% ms.
+Return
+
+
+
+F8::ExitApp
+return
+

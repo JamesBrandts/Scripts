@@ -1,0 +1,12 @@
+FileRead, list, list.txt ; Read file
+list := StrSplit(list, "`n", "`r`n") ; Split each line in a element of an array
+output := ""
+for index, line in list
+	if (SubStr(line,1,8) = "CDA 2021") ; Makes a verification on the line
+		output .= line . "`r`n" ; If the line attends add it to the output var
+
+loop
+	FileMove,list.txt,list(Old %A_Index%).txt ; Rename the old File
+Until ErrorLevel = 0
+
+FileAppend, %output%, list.txt
