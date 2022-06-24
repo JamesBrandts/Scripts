@@ -1,4 +1,4 @@
-winTitle := "Sem título - Bloco de notas" ;The Diablo window name can be obtained using the Window Spy, Clicking with the right button on the Autohotkey Incon on the system tray (Green H)
+winTitle := "Diablo Window Name" ;The Diablo window name can be obtained using the Window Spy, Clicking with the right button on the Autohotkey Incon on the system tray (Green H)
 F3::
 active := true
 ;SetTimer,Press1,500 ; You can add a semicolon in the star of the line to deactivate this button
